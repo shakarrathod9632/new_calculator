@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Calculator</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="container" style="background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 30px; width: 60%; max-width: 800px; height: auto; max-height: 90%; overflow-y: auto;">
+        <div class="header" style="text-align: center; margin-bottom: 20px;">
+            <h1 style="margin-bottom: 10px;">Premium Calculator</h1>
+            <div class="step-indicator" style="font-size: 14px; color: #555; margin-bottom: 20px;">
+                <span>Step 01</span> Plan related information
+            </div>
+        </div>
+
+        <form id="premium-form">
+            <!-- Form for inputs -->
+            <div class="form-row" style="display: flex; justify-content: space-between; margin-bottom: 15px; flex-wrap: wrap;">
+                <div class="form-group" style="width: 30%; min-width: 150px;">
+                    <label for="proposerName" style="display: block; margin-bottom: 5px; font-weight: bold;">Name of proposer</label>
+                    <input type="text" id="proposerName" placeholder="Name-of-Proposer" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="width: 30%; min-width: 150px;">
+                    <label for="dob" style="display: block; margin-bottom: 5px; font-weight: bold;">Date of Birth</label>
+                    <input type="date" id="dob" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="width: 30%; min-width: 150px;">
+                    <label for="gender" style="display: block; margin-bottom: 5px; font-weight: bold;">Gender</label>
+                    <div class="gender-selection" style="display: flex;">
+                        <label style="font-weight: normal; margin-right: 10px;"><input type="radio" name="gender" value="Male"> Male</label>
+                        <label style="font-weight: normal;"><input type="radio" name="gender" value="Female"> Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More form fields -->
+            <div class="form-row" style="display: flex; justify-content: space-between; margin-bottom: 15px; flex-wrap: wrap;">
+                <div class="form-group" style="width: 30%; min-width: 150px;">
+                    <label for="commencementDate" style="display: block; margin-bottom: 5px; font-weight: bold;">Commencement Date</label>
+                    <input type="date" id="commencementDate" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="width: 30%; min-width: 150px;">
+                    <label for="plan" style="display: block; margin-bottom: 5px; font-weight: bold;">Plan</label>
+                    <select id="plan" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="934">934-Jeevan Tarun</option>
+                        <option value="945">945-Jeevan Umang</option>
+                        <option value="860">860-Bhima Jyoti</option>
+                        <option value="917">917-Single Premium Endowment</option>
+                        <option value="932">932-New Children's Money Back</option>
+                    </select>
+                </div>
+                <div class="form-group" style="width: 30%; min-width: 150px;">
+                    <label for="mode" style="display: block; margin-bottom: 5px; font-weight: bold;">Mode</label>
+                    <select id="mode" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="Half Yearly">Half Yearly</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Quarterly">Quarterly</option>
+                        <option value="SSS">SSS</option>
+                        <option value="Yearly">Yearly</option>
+                    </select>
+                </div>
+            </div>
+
+              <!-- Third Row: Term, PPT, Sum Assured -->
+              <div class="form-row" style="display: flex; justify-content: space-between; margin-bottom: 15px; flex-wrap: wrap;">
+                <div class="form-group" style="width: 30%; min-width: 150px;">
+                    <label for="term" style="display: block; margin-bottom: 5px; font-weight: bold;">Term</label>
+                    <select id="term" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="25">25</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="width: 30%; min-width: 150px;">
+                    <label for="ppt" style="display: block; margin-bottom: 5px; font-weight: bold;">PPT</label>
+                    <select id="ppt" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="20">20</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="width: 30%; min-width: 150px;">
+                    <label for="sumAssured" style="display: block; margin-bottom: 5px; font-weight: bold;">Sum Assured</label>
+                    <input type="number" id="sumAssured" value="500000" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+            </div>
+
+            
+            <!-- Proceed Button -->
+            <div class="form-group button-container" style="text-align: center; margin-top: 20px;">
+                <button type="button" id="proceedBtn" style="width: 40%; padding: 10px; background-color: orange; border: none; border-radius: 4px; color: white; font-weight: bold; cursor: pointer;">Proceed</button>
+            </div>
+        </form>
+
+        <!-- Summary Section -->
+        <div id="summary-section" style="margin-top: 20px; display: none;">
+            <table style="width: 60%; float: left; border-collapse: collapse; margin-right: 20px;">
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 10px;">Name of Proposer</td>
+                    <td id="summary-name" style="border: 1px solid #ccc; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 10px;">Date of Birth</td>
+                    <td id="summary-dob" style="border: 1px solid #ccc; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 10px;">Gender</td>
+                    <td id="summary-gender" style="border: 1px solid #ccc; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 10px;">Selected Plan</td>
+                    <td id="summary-plan" style="border: 1px solid #ccc; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 10px;">Date of Commencement</td>
+                    <td id="summary-commencement" style="border: 1px solid #ccc; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 10px;">Term</td>
+                    <td id="summary-term" style="border: 1px solid #ccc; padding: 10px;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 10px;">Pay Mode</td>
+                    <td id="summary-mode" style="border: 1px solid #ccc; padding: 10px;"></td>
+                </tr>
+            </table>
+
+            <div style="float: right; width: 35%;">
+                <h3 style="margin-bottom: 10px;">Sum Assured</h3>
+                <div style="background-color: #00529B; color: white; padding: 10px; text-align: center; font-size: 20px;" id="summary-sum-assured"></div>
+
+                <h3 style="margin: 10px 0;">Basic Premium Amount</h3>
+                <div id="summary-basic-premium" style="padding: 10px; border: 1px solid #ccc; text-align: center;"></div>
+
+                <h3 style="margin: 10px 0;">GST</h3>
+                <div id="summary-gst" style="padding: 10px; border: 1px solid #ccc; text-align: center;"></div>
+
+                <h3 style="margin: 10px 0;">Total Premium Amount</h3>
+                <div style="background-color: #00529B; color: white; padding: 10px; text-align: center; font-size: 20px;" id="summary-total-premium"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('proceedBtn').addEventListener('click', function () {
+            // Get values from inputs
+            var proposerName = document.getElementById('proposerName').value;
+            var dob = document.getElementById('dob').value;
+            var gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
+            var commencementDate = document.getElementById('commencementDate').value;
+            var plan = document.getElementById('plan').value;
+            var mode = document.getElementById('mode').value;
+            var term = 20; // Example term
+
+            // Calculate summary values (dummy values used)
+            var sumAssured = 1000000; // example
+            var basicPremium = sumAssured * 0.04; // assume 4% premium rate
+            var gst = basicPremium * 0.18; // 18% GST
+            var totalPremium = basicPremium + gst;
+
+            // Update the summary table
+            document.getElementById('summary-name').textContent = proposerName;
+            document.getElementById('summary-dob').textContent = dob;
+            document.getElementById('summary-gender').textContent = gender;
+            document.getElementById('summary-plan').textContent = plan;
+            document.getElementById('summary-commencement').textContent = commencementDate;
+            document.getElementById('summary-term').textContent = term;
+            document.getElementById('summary-mode').textContent = mode;
+
+            // Update the premium values
+            document.getElementById('summary-sum-assured').textContent = sumAssured.toLocaleString('en-IN', { style: 'currency', currency: 'INR' });
+            document.getElementById('summary-basic-premium').textContent = basicPremium.toLocaleString('en-IN', { style: 'currency', currency: 'INR' });
+            document.getElementById('summary-gst').textContent = gst.toLocaleString('en-IN', { style: 'currency', currency: 'INR' });
+            document.getElementById('summary-total-premium').textContent = totalPremium.toLocaleString('en-IN', { style: 'currency', currency: 'INR' });
+
+            // Show the summary section
+            document.getElementById('summary-section').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
